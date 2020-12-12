@@ -1,1 +1,25 @@
 # Pygit
+
+## Here is an example that shows how you can run git commands:-
+
+    #example code
+    import pygitcli
+    git = pygitcli.Git()
+    git.init()
+    git.add()
+    git.commit('commit message)
+    git.push()
+
+### Pygit intelligently detects if this project is already configured with a github repository, If it finds the repository , it automatically adds them to the Git class.
+
+<br/>
+
+### If you want to override the arguments of the Git class , pass the url , branch to the class in the following way:-
+
+    #override the args of Git
+    import pygitcli
+    git = pygitcli.Git('repo url' , 'branch name')
+    git.init()
+    git.add()
+    git.commit('Changed URL , branch fetching logic')
+    git.push()

@@ -1,5 +1,11 @@
 from setuptools import setup, find_packages
- 
+ # read the contents of your README file
+from os import path
+
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 classifiers = [
   'Development Status :: 5 - Production/Stable',
   'Intended Audience :: Education',
@@ -9,10 +15,11 @@ classifiers = [
 ]
  
 setup(
-  name='pygit',
-  version='0.0.1',
+  name='Pygitcli',
+  version='0.0.5',
   description='Run git terminal commands from python scripts',
-  long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
+  long_description=long_description + '\n\n'+  open('CHANGELOG.txt').read(),
+  long_description_content_type='text/markdown',
   url='https://github.com/antrikshmisri/Pygit',  
   author='Antriksh Misri',
   author_email='antrikshmisri@gmail.com',

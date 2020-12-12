@@ -4,3 +4,7 @@ Change Log
 0.0.1 (13/12/2020)
 ------------------
 - First Release
+
+0.0.4 (13/12/2020)
+------------------
+- Changed Documentation

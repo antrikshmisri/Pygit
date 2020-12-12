@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: Pygitcli
+Version: 0.0.5
+Summary: Run git terminal commands from python scripts
+Home-page: https://github.com/antrikshmisri/Pygit
+Author: Antriksh Misri
+Author-email: antrikshmisri@gmail.com
+License: MIT
+Description: # Pygit
+        
+        ## Here is an example that shows how you can run git commands:-
+        
+            #example code
+            import pygitcli
+            git = pygitcli.Git()
+            git.init()
+            git.add()
+            git.commit('commit message)
+            git.push()
+        
+        ### Pygit intelligently detects if this project is already configured with a github repository, If it finds the repository , it automatically adds them to the Git class.
+        
+        <br/>
+        
+        ### If you want to override the arguments of the Git class , pass the url , branch to the class in the following way:-
+        
+            #override the args of Git
+            import pygitcli
+            git = pygitcli.Git('repo url' , 'branch name')
+            git.init()
+            git.add()
+            git.commit('Changed URL , branch fetching logic')
+            git.push()
+        
+        Change Log
+        ==========
+        
+        0.0.1 (13/12/2020)
+        ------------------
+        - First Release
+        
+        0.0.4 (13/12/2020)
+        ------------------
+        - Changed Documentation
+Keywords: git
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
