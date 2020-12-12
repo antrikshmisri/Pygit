@@ -38,4 +38,4 @@ class Git:
         call('git pull')
     @classmethod
     def push(self):
-        call('git push -u ' + self.url+ ' ' + self.branch)
+        print('git push -u ' + self.url+ ' ' + self.branch)
