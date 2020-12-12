@@ -1,2 +1,4 @@
 test.py
 README.txt
+dist/
+pygitcli.egg-info/
