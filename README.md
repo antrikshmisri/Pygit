@@ -1,5 +1,9 @@
 # Pygit
+## Installation:
+<br/>
 
+    pip install Pygitcli
+    
 ## Here is an example that shows how you can run git commands:-
 
     #example code
