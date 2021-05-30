@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 classifiers = [
-  'Development Status :: 5 - Production/Stable',
+  'Development Status :: 6 - Production/Stable',
   'Intended Audience :: Education',
   'Operating System :: Microsoft :: Windows :: Windows 10',
   'License :: OSI Approved :: MIT License',
@@ -16,7 +16,7 @@ classifiers = [
  
 setup(
   name='Pygitcli',
-  version='0.0.5',
+  version='0.0.6',
   description='Run git terminal commands from python scripts',
   long_description=f"{long_description} \n\n {open('CHANGELOG.txt').read()}",
   long_description_content_type='text/markdown',

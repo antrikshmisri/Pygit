@@ -9,7 +9,7 @@ Change Log
 ------------------
 - Changed Documentation
 
-0.0.5 (30/05/2021)
+0.0.6 (30/05/2021)
 ------------------
 - Code cleanup
 - Bug Fixes
