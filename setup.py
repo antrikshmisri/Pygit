@@ -18,7 +18,7 @@ setup(
   name='Pygitcli',
   version='0.0.5',
   description='Run git terminal commands from python scripts',
-  long_description=long_description + '\n\n'+  open('CHANGELOG.txt').read(),
+  long_description=f"{long_description} \n\n {open('CHANGELOG.txt').read()}",
   long_description_content_type='text/markdown',
   url='https://github.com/antrikshmisri/Pygit',  
   author='Antriksh Misri',
