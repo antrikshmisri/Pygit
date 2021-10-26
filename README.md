@@ -1,4 +1,6 @@
 # Pygit
+[![Downloads](https://pepy.tech/badge/pygitcli)](https://pepy.tech/project/pygitcli) <br />
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 ## Installation:
 <br/>
 
