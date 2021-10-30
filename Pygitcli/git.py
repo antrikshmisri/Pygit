@@ -1,7 +1,9 @@
 import os
-from subprocess import call, Popen, PIPE
-from .colors import logcolors
 from os.path import join
+from subprocess import PIPE, Popen, call
+
+from .colors import logcolors
+
 
 class Git:
     """Perform various git commands through a script
@@ -17,12 +19,12 @@ class Git:
     git_command: str
         git command boilerplate to include target/.git path
     """
+
     def __init__(self, path):
         self.current_directory = os.getcwd()
         self.path = path
         self.git_path = join(self.path, '.git')
         self.git_command = f'git --git-dir={self.git_path} --work-tree={self.path}'
-
 
     def init(self):
         """Initializes git repository by calling git init
@@ -30,7 +32,6 @@ class Git:
         os.chdir(self.path)
         call(f'git init')
         os.chdir(self.current_directory)
-
 
     def create_readme(self):
         """Creates README.md if during the git repository initialization
@@ -40,7 +41,6 @@ class Git:
         with open(readme_path, 'w') as readme:
             readme.write(f'# {dir}')
             readme.close()
-
 
     def add(self, file):
         """Stages a changed file by calling git add <filename>
@@ -52,7 +52,6 @@ class Git:
         """
         # perform git add on file
         call(f'{self.git_command} add {file}')
-
 
     def commit(self, msg):
         """Commits the changed file with a message by calling git commit -m <message>
@@ -73,7 +72,6 @@ class Git:
             except Exception as e:
                 print(f"{logcolors.ERROR} {e} {logcolors.ENDC}")
                 return False
-            
 
     def set_remote(self, url):
         """Set the remote repository to the specified URL
@@ -84,7 +82,6 @@ class Git:
             URL of the remote repository
         """
         call(f'{self.git_command} remote add origin {url}')
-
 
     def set_branch(self, branch, new=True):
         """Set the working branch to the specified branch
@@ -99,7 +96,6 @@ class Git:
         else:
             call(f'{self.git_command} checkout {branch}')
 
-
     def pull(self, info):
         """Pull changes from remote repository
 
@@ -111,7 +107,6 @@ class Git:
         _url, _branch = info
         call(f'{self.git_command} pull {_url} {_branch}')
 
-
     def push(self, info):
         """Push the staged and commited changes to the remote URL/branch
 
@@ -122,7 +117,6 @@ class Git:
         """
         _url, _branch = info
         call(f'{self.git_command} push -u {_url} {_branch}')
-        
 
     def get_remote(self):
         """Get the remote URL from the local directory
@@ -131,14 +125,12 @@ class Git:
                        stdout=PIPE).stdout.read().decode('utf-8')
         return remote
 
-
     def get_branch(self):
         """Get the working branch from the local directory
         """
         branch = Popen(f'{self.git_command} rev-parse --symbolic-full-name HEAD',
                        stdout=PIPE).stdout.read().decode('utf-8')
         return branch
-    
 
     def init_repo(self, info):
         """If directory is git initialized, perform starting git commands
