@@ -1,4 +1,4 @@
-  
+
 class logcolors:
     """Escape Codes for terminal colors
     """
